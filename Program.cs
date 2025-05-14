@@ -84,10 +84,14 @@ namespace CreedCyberWorriasBot
 
         static void StartChat(string userName)
         {
+            Console.WriteLine($"\nType 'help' for topics or 'exit' to leave.");
+
             while (true)
             {
-                Console.WriteLine($"\nWhat would you like to talk about, {userName}? (Type 'help' or 'exit')");
+                Console.Write($"\nYou: ");
                 string input = Console.ReadLine().Trim().ToLower();
+
+                if (string.IsNullOrWhiteSpace(input)) continue;
 
                 if (input == "exit")
                 {
