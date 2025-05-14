@@ -34,6 +34,7 @@ namespace CreedCyberWorriasBot
                 "Use a VPN on public Wi-Fi to keep your data safe."
             }
         };
+        static Random rand = new Random();
 
         static void Main(string[] args)
         {
@@ -179,9 +180,9 @@ namespace CreedCyberWorriasBot
         static void ShowRandomResponse(string category)
         {
             var responses = topicResponses[category];
-            var rand = new Random();
             TypingDelay(responses[rand.Next(responses.Count)]);
         }
+
 
         static string ExtractTopic(string input)
         {
