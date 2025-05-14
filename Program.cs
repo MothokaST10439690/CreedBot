@@ -112,29 +112,29 @@ namespace CreedCyberWorriasBot
 
                 switch (input)
                 {
-                    case "how are you?":
+                    case "how are you":
                         TypingDelay("I'm just code, but I'm here to help you stay safe!");
                         break;
-                    case "what is your purpose?":
+                    case "what is your purpose":
                         TypingDelay("To guide and educate you about cybersecurity.");
                         break;
-                    case "what can i ask you?":
+                    case "what can i ask you":
                         TypingDelay("You can ask about phishing, passwords, scams, privacy, and more.");
                         break;
                     case "help":
                         TypingDelay("Here are some things you can ask me:");
                         Console.WriteLine("- Password\n- Phishing\n- Scam\n- Privacy\n- What is Two-Factor Authentication?\n- How can I protect against malware?\n- What is social engineering?\n- General cybersecurity tips");
                         break;
-                    case "what is two-factor authentication?":
+                    case "what is two-factor authentication":
                         TypingDelay("2FA adds a second layer to your login — like a code sent to your phone.");
                         break;
-                    case "how can i protect against malware?":
+                    case "how can i protect against malware":
                         TypingDelay("Use antivirus software, update it often, and don't download unknown files.");
                         break;
-                    case "what is social engineering?":
+                    case "what is social engineering":
                         TypingDelay("It's when attackers manipulate people to give up private info — always verify!");
                         break;
-                    case "what are some general cybersecurity tips?":
+                    case "what are some general cybersecurity tips":
                         TypingDelay("Update software, use strong passwords, enable 2FA, and avoid suspicious links.");
                         break;
                     default:
