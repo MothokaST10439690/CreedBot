@@ -190,6 +190,7 @@ namespace CreedCyberWorriasBot
 
         static void TypingDelay(string message)
         {
+            Console.Write("Bot: ");
             foreach (char c in message)
             {
                 Console.Write(c);
