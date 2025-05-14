@@ -66,7 +66,7 @@ namespace CreedCyberWorriasBot
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("welcome.wav");
+                SoundPlayer player = new SoundPlayer("welcom.wav");
                 player.PlaySync();
             }
             catch (Exception ex)
@@ -77,9 +77,9 @@ namespace CreedCyberWorriasBot
 
         static string GetUserName()
         {
-            Console.Write("\nWhat's your name? ");
+            Console.WriteLine("\nWhat's your name? ");
             string name = Console.ReadLine();
-            TypingDelay($"\nHello, {name}! Welcome to Creed CyberWorrias — your online safety guide.");
+            TypingDelay($"\nHello, {name}! Welcome to Creed CyberWorrias  your online safety guide.");
             return name;
         }
 
@@ -110,39 +110,53 @@ namespace CreedCyberWorriasBot
                 if (DetectEmotion(input)) continue;
                 if (HandleKeywordTopic(input)) continue;
 
-                switch (input)
                 {
-                    case "how are you":
+                    if (input.Contains("how are you"))
+                    {
                         TypingDelay("I'm just code, but I'm here to help you stay safe!");
-                        break;
-                    case "what is your purpose":
+                        continue;
+                    }
+                    else if (input.Contains("what is your purpose"))
+                    {
                         TypingDelay("To guide and educate you about cybersecurity.");
-                        break;
-                    case "what can i ask you":
+                        continue;
+                    }
+                    else if (input.Contains("what can i ask"))
+                    {
                         TypingDelay("You can ask about phishing, passwords, scams, privacy, and more.");
-                        break;
-                    case "help":
+                        continue;
+                    }
+                    else if (input.Contains("help"))
+                    {
                         TypingDelay("Here are some things you can ask me:");
                         Console.WriteLine("- Password\n- Phishing\n- Scam\n- Privacy\n- What is Two-Factor Authentication?\n- How can I protect against malware?\n- What is social engineering?\n- General cybersecurity tips");
-                        break;
-                    case "what is two-factor authentication":
+                        continue;
+                    }
+                    else if (input.Contains("what is two-factor authentication"))
+                    {
                         TypingDelay("2FA adds a second layer to your login — like a code sent to your phone.");
-                        break;
-                    case "how can i protect against malware":
+                        continue;
+                    }
+                    else if (input.Contains("how can i protect against malware"))
+                    {
                         TypingDelay("Use antivirus software, update it often, and don't download unknown files.");
-                        break;
-                    case "what is social engineering":
+                        continue;
+                    }
+                    else if (input.Contains("what is social engineering"))
+                    {
                         TypingDelay("It's when attackers manipulate people to give up private info — always verify!");
-                        break;
-                    case "what are some general cybersecurity tips":
+                        continue;
+                    }
+                    else if (input.Contains("general cybersecurity tips"))
+                    {
                         TypingDelay("Update software, use strong passwords, enable 2FA, and avoid suspicious links.");
-                        break;
-                    default:
-                        TypingDelay("I didn't quite catch that. Try asking something related to online safety or type 'help'.");
-                        break;
+                        continue;
+                    }
                 }
             }
         }
+        
+
 
         static bool HandleKeywordTopic(string input)
         {
